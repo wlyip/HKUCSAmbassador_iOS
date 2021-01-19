@@ -1,0 +1,6 @@
+framework module Pods_CS_Ambassador_CS_AmbassadorUITests {
+  umbrella header "Pods-CS Ambassador-CS AmbassadorUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

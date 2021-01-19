@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatInputAccessoryView" customModule="CS_Ambassador" customModuleProvider="target">
+            <connections>
+                <outlet property="inputBoxView" destination="F9q-tc-GQL" id="3nF-ao-vl9"/>
+                <outlet property="sendButton" destination="dag-Z6-Oo7" id="9vv-vY-xSt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dag-Z6-Oo7">
+                    <rect key="frame" x="379" y="18" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="0AH-JW-qeV"/>
+                        <constraint firstAttribute="height" constant="25" id="RmQ-MS-8Mm"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="send_button"/>
+                    <connections>
+                        <action selector="clickOnSendButtonWith_sender:" destination="-1" eventType="touchUpInside" id="mGi-Wo-Um8"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F9q-tc-GQL">
+                    <rect key="frame" x="10" y="10" width="359" height="41"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.31372549019607843" green="0.39215686274509803" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="F9q-tc-GQL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="7Fa-c7-OtY"/>
+                <constraint firstItem="F9q-tc-GQL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9tH-il-AIN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dag-Z6-Oo7" secondAttribute="trailing" constant="10" id="FEs-TU-Lrb"/>
+                <constraint firstItem="dag-Z6-Oo7" firstAttribute="centerY" secondItem="F9q-tc-GQL" secondAttribute="centerY" id="KtC-qh-pue"/>
+                <constraint firstItem="F9q-tc-GQL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="OLY-c2-qvl"/>
+                <constraint firstItem="dag-Z6-Oo7" firstAttribute="leading" secondItem="F9q-tc-GQL" secondAttribute="trailing" constant="10" id="VV0-EB-FzH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="F9q-tc-GQL" secondAttribute="bottom" constant="10" id="u3L-e4-g4C"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="-157.70089285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="send_button" width="256" height="256"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
