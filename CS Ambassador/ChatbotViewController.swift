@@ -37,11 +37,23 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
         //chatbotTableView.register(UITableViewCell.self, forCellReuseIdentifier: messageID)
         chatbotTableView.register(UINib(nibName: "ChatbotTableViewCell", bundle: nil), forCellReuseIdentifier: ChatbotTableViewCell.identifier)
         chatbotTableView.register(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: UserCell.identifier)
+        chatbotTableView.register(UINib(nibName: "ButtonCell", bundle: nil), forCellReuseIdentifier: ButtonCell.identifier)
     }
     
     func clickOnSendButton(text: String) {
         listOfMessages.append(Msg(message: text, sender: "user", type: "", value: ""))
         chatbotTableView.reloadData()
+        
+        //api here
+        if text == "Hi" {
+            listOfMessages.append(Msg(message: "Hey", sender: "bot", type: "", value: ""))
+            chatbotTableView.reloadData()
+        }
+        else if text == "Hii"{
+            listOfMessages.append(Msg(message: "Heyyyyyyyyyyyyy", sender: "button", type: "", value: ""))
+            chatbotTableView.reloadData()
+        }
+        
         chatInputAccessoryView.inputBoxView.text = ""
     }
     
@@ -67,20 +79,22 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if listOfMessages[indexPath.row].sender == "user" {
             let cell = chatbotTableView.dequeueReusableCell(withIdentifier: UserCell.identifier, for: indexPath) as! UserCell
-            //cell.userMessageTextView.text = listOfMessages[indexPath.row].message
-            cell.messageText = listOfMessages[indexPath.row].message
+            cell.messageText = " "+listOfMessages[indexPath.row].message
 
             return cell
-            
+        }
+        else if listOfMessages[indexPath.row].sender == "button" {
+            let cell = chatbotTableView.dequeueReusableCell(withIdentifier: ButtonCell.identifier, for: indexPath) as! ButtonCell
+            cell.buttonView.setTitle("  "+listOfMessages[indexPath.row].message+"  ", for: .normal)
+            //cell.buttonView.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+
+            return cell
         }
         
         let cell = chatbotTableView.dequeueReusableCell(withIdentifier: ChatbotTableViewCell.identifier, for: indexPath) as! ChatbotTableViewCell
         //cell.messageTextView.text = listOfMessages[indexPath.row].message
-        cell.messageText = listOfMessages[indexPath.row].message
+        cell.messageText = " "+listOfMessages[indexPath.row].message
         //cell.messageText?.message = listOfMessages[indexPath.row].message
-        
-        cell.tintColor = UIColor(hex: 0xEFEEE5)
-        //cell.backgroundColor = .white
         
         return cell
     }

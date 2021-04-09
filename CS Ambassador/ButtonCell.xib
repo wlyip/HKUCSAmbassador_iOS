@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageID3" rowHeight="52" id="tS9-Ev-eXk" customClass="ButtonCell" customModule="CS_Ambassador" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="52"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tS9-Ev-eXk" id="1bk-2z-Gb8">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="52"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wa-1e-SbJ">
+                        <rect key="frame" x="10" y="2" width="72" height="48"/>
+                        <color key="backgroundColor" red="0.47797264150000002" green="0.5348988348" blue="0.62427575810000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="3wa-1e-SbJ" firstAttribute="leading" secondItem="1bk-2z-Gb8" secondAttribute="leading" constant="10" id="aYC-2w-yxJ"/>
+                    <constraint firstItem="3wa-1e-SbJ" firstAttribute="top" secondItem="1bk-2z-Gb8" secondAttribute="top" constant="2" id="pCp-a3-1Jc"/>
+                    <constraint firstAttribute="bottom" secondItem="3wa-1e-SbJ" secondAttribute="bottom" constant="2" id="s5G-bJ-0p1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="buttonView" destination="3wa-1e-SbJ" id="XYJ-hT-Owb"/>
+            </connections>
+            <point key="canvasLocation" x="110.14492753623189" y="-146.65178571428569"/>
+        </tableViewCell>
+    </objects>
+</document>
