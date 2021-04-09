@@ -30,7 +30,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
     
     lazy var chatInputAccessoryView: ChatInputAccessoryView = {
         let view = ChatInputAccessoryView()
-        view.frame = .init(x: 0, y: 0, width: view.frame.width, height: 80)
+        view.frame = .init(x: 0, y: 0, width: view.frame.width, height: 50)
         view.delegate = self
         return view
     }()
@@ -49,6 +49,8 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
         messagesCollectionView.messageCellDelegate = self
         messageInputBar.delegate = self
         messageInputBar.contentView.backgroundColor = UIColor(hex: 0x506497)
+        
+        listOfMessages.append(Message(messageId: "1", sentDate: Date(), kind: .text("Welcome, how may I help you?"), sender: bot))
     }
     
     func currentSender() -> SenderType {

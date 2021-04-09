@@ -33,8 +33,12 @@ class ChatInputAccessoryView: UIView, UITextViewDelegate {
         self.addSubview(view)
         
         inputBoxView.layer.cornerRadius = 15
-        autoresizingMask = .flexibleHeight
         
+        sendButton.imageView?.contentMode = .scaleAspectFill
+        sendButton.contentVerticalAlignment = .fill
+        sendButton.contentHorizontalAlignment = .fill
+        
+        autoresizingMask = .flexibleHeight
         inputBoxView.delegate = self
     }
     

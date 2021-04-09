@@ -55,7 +55,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         if (indexPath.item == 0) {
-            let chat = ChatViewController()
+            //let chat = ChatViewController()
+            //navigationController?.pushViewController(chat, animated: true)
+            let storyboard = UIStoryboard.init(name: "ChatbotStoryboard", bundle: nil)
+            let chat = storyboard.instantiateViewController(withIdentifier: "ChatbotViewController")
             navigationController?.pushViewController(chat, animated: true)
         }
         else if (indexPath.item == 1) {

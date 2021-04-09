@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Ghb-f9-Qlr">
+            <objects>
+                <navigationController id="Qkt-Mi-S0n" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sq1-9p-vTO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PNr-G5-bFJ" kind="relationship" relationship="rootViewController" id="avM-vY-e3T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="11B-pZ-E6i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1710" y="-261"/>
+        </scene>
+        <!--Chatbot View Controller-->
+        <scene sceneID="8U2-8H-cDz">
+            <objects>
+                <viewController storyboardIdentifier="ChatbotViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PNr-G5-bFJ" customClass="ChatbotViewController" customModule="CS_Ambassador" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y0j-ih-k4q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YYg-hW-VUS">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3G6-dB-KMx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YYg-hW-VUS" firstAttribute="top" secondItem="3G6-dB-KMx" secondAttribute="top" id="DPt-10-sbi"/>
+                            <constraint firstItem="3G6-dB-KMx" firstAttribute="trailing" secondItem="YYg-hW-VUS" secondAttribute="trailing" id="XnZ-AT-VHX"/>
+                            <constraint firstItem="3G6-dB-KMx" firstAttribute="bottom" secondItem="YYg-hW-VUS" secondAttribute="bottom" id="gL5-4j-W4s"/>
+                            <constraint firstItem="YYg-hW-VUS" firstAttribute="leading" secondItem="3G6-dB-KMx" secondAttribute="leading" id="nbN-5H-EGO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="NxU-Rr-z1t"/>
+                    <connections>
+                        <outlet property="chatbotTableView" destination="YYg-hW-VUS" id="R4h-Ke-HCi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FB1-zw-kPj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-929" y="-261"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
