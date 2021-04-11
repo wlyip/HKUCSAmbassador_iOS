@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageID5" rowHeight="80" id="TQt-IC-o5D" customClass="CardButtonCell" customModule="CS_Ambassador" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="413" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TQt-IC-o5D" id="caT-cI-I0f">
+                <rect key="frame" x="0.0" y="0.0" width="413" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U00-4H-IXO">
+                        <rect key="frame" x="10" y="0.0" width="250" height="80"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPy-V6-Fhh">
+                                <rect key="frame" x="5" y="0.0" width="240" height="75"/>
+                                <color key="backgroundColor" red="0.66231866539999995" green="0.70987871749999998" blue="0.81481870670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.47132588730000002" green="0.51154682409999996" blue="0.59918692679999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="pPy-V6-Fhh" firstAttribute="leading" secondItem="U00-4H-IXO" secondAttribute="leading" constant="5" id="20i-V5-PDo"/>
+                            <constraint firstItem="pPy-V6-Fhh" firstAttribute="top" secondItem="U00-4H-IXO" secondAttribute="top" id="5x9-FK-vdT"/>
+                            <constraint firstAttribute="width" constant="250" id="S1k-W6-Sd7"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="SY2-fb-X3q"/>
+                            <constraint firstAttribute="bottom" secondItem="pPy-V6-Fhh" secondAttribute="bottom" constant="5" id="W9f-mN-tZz"/>
+                            <constraint firstAttribute="trailing" secondItem="pPy-V6-Fhh" secondAttribute="trailing" constant="5" id="gGq-TH-4F8"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="U00-4H-IXO" firstAttribute="leading" secondItem="caT-cI-I0f" secondAttribute="leading" constant="10" id="LXB-7e-UxP"/>
+                    <constraint firstItem="U00-4H-IXO" firstAttribute="top" secondItem="caT-cI-I0f" secondAttribute="top" id="RAP-WK-kxe"/>
+                    <constraint firstAttribute="bottom" secondItem="U00-4H-IXO" secondAttribute="bottom" id="a4o-1h-L4a"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="cardButtonView" destination="pPy-V6-Fhh" id="rsM-gy-xFc"/>
+            </connections>
+            <point key="canvasLocation" x="87.681159420289859" y="-95.758928571428569"/>
+        </tableViewCell>
+    </objects>
+</document>

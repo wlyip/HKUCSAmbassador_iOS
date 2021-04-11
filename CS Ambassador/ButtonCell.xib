@@ -25,8 +25,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="3wa-1e-SbJ" firstAttribute="leading" secondItem="1bk-2z-Gb8" secondAttribute="leading" constant="10" id="aYC-2w-yxJ"/>
-                    <constraint firstItem="3wa-1e-SbJ" firstAttribute="top" secondItem="1bk-2z-Gb8" secondAttribute="top" constant="2" id="pCp-a3-1Jc"/>
-                    <constraint firstAttribute="bottom" secondItem="3wa-1e-SbJ" secondAttribute="bottom" constant="2" id="s5G-bJ-0p1"/>
+                    <constraint firstItem="3wa-1e-SbJ" firstAttribute="top" secondItem="1bk-2z-Gb8" secondAttribute="top" constant="5" id="pCp-a3-1Jc"/>
+                    <constraint firstAttribute="bottom" secondItem="3wa-1e-SbJ" secondAttribute="bottom" constant="5" id="s5G-bJ-0p1"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

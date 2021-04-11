@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageID4" rowHeight="268" id="0Ke-WX-bed" customClass="CardInfoCell" customModule="CS_Ambassador" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="413" height="268"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Ke-WX-bed" id="Iv3-5c-D0D">
+                <rect key="frame" x="0.0" y="0.0" width="413" height="268"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLX-Mv-PfX">
+                        <rect key="frame" x="10" y="133" width="250" height="135"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" scrollEnabled="NO" text="Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Cf4-R7-olW">
+                                <rect key="frame" x="5" y="0.0" width="240" height="105"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="252" scrollEnabled="NO" text="Sub" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ctp-9X-KR1">
+                                <rect key="frame" x="5" y="105" width="240" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.47132588730000002" green="0.51154682409999996" blue="0.59918692679999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Cf4-R7-olW" firstAttribute="leading" secondItem="HLX-Mv-PfX" secondAttribute="leading" constant="5" id="IRE-T0-rmY"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Qot-QW-x5u"/>
+                            <constraint firstItem="Ctp-9X-KR1" firstAttribute="top" secondItem="Cf4-R7-olW" secondAttribute="bottom" id="Tyw-xm-Qle"/>
+                            <constraint firstAttribute="width" constant="250" id="WVD-Tu-h8R"/>
+                            <constraint firstItem="Cf4-R7-olW" firstAttribute="top" secondItem="HLX-Mv-PfX" secondAttribute="top" id="WXX-5X-7ha"/>
+                            <constraint firstAttribute="trailing" secondItem="Ctp-9X-KR1" secondAttribute="trailing" constant="5" id="YMT-1O-Fsw"/>
+                            <constraint firstAttribute="trailing" secondItem="Cf4-R7-olW" secondAttribute="trailing" constant="5" id="r2w-GO-weR"/>
+                            <constraint firstAttribute="bottom" secondItem="Ctp-9X-KR1" secondAttribute="bottom" id="sPy-uo-GYw"/>
+                            <constraint firstItem="Ctp-9X-KR1" firstAttribute="leading" secondItem="HLX-Mv-PfX" secondAttribute="leading" constant="5" id="wMi-uY-7Ng"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X08-ZU-aN9">
+                        <rect key="frame" x="10" y="5" width="250" height="128"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="250" id="hCv-oX-wAc"/>
+                            <constraint firstAttribute="height" constant="128" id="r81-WM-9CD"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="HLX-Mv-PfX" firstAttribute="top" secondItem="X08-ZU-aN9" secondAttribute="bottom" id="D1C-uO-N0d"/>
+                    <constraint firstItem="X08-ZU-aN9" firstAttribute="top" secondItem="Iv3-5c-D0D" secondAttribute="top" constant="5" id="k3A-HW-2Sj"/>
+                    <constraint firstAttribute="bottom" secondItem="HLX-Mv-PfX" secondAttribute="bottom" id="lSV-Ea-GnH"/>
+                    <constraint firstItem="HLX-Mv-PfX" firstAttribute="leading" secondItem="Iv3-5c-D0D" secondAttribute="leading" constant="10" id="n2e-LL-ujw"/>
+                    <constraint firstItem="X08-ZU-aN9" firstAttribute="leading" secondItem="Iv3-5c-D0D" secondAttribute="leading" constant="10" id="yMA-W8-vGQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="cardImageView" destination="X08-ZU-aN9" id="Ejf-QG-7gh"/>
+                <outlet property="cardSubView" destination="Ctp-9X-KR1" id="7fF-2t-JNz"/>
+                <outlet property="cardTitleView" destination="Cf4-R7-olW" id="r1c-UR-f8L"/>
+            </connections>
+            <point key="canvasLocation" x="58.695652173913047" y="-220.98214285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

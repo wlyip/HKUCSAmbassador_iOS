@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="usermessage" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mT-3I-z04">
-                        <rect key="frame" x="154" y="2" width="250" height="48"/>
+                        <rect key="frame" x="154" y="5" width="250" height="42"/>
                         <color key="backgroundColor" red="0.4051621212" green="0.53231029839999999" blue="0.78141328480000005" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="250" id="h5w-NJ-BbU"/>
@@ -28,8 +28,8 @@
                     </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="9mT-3I-z04" firstAttribute="top" secondItem="81k-dE-5No" secondAttribute="top" constant="2" id="hHa-ac-1Eg"/>
-                    <constraint firstAttribute="bottom" secondItem="9mT-3I-z04" secondAttribute="bottom" constant="2" id="lvn-qq-Llr"/>
+                    <constraint firstItem="9mT-3I-z04" firstAttribute="top" secondItem="81k-dE-5No" secondAttribute="top" constant="5" id="hHa-ac-1Eg"/>
+                    <constraint firstAttribute="bottom" secondItem="9mT-3I-z04" secondAttribute="bottom" constant="5" id="lvn-qq-Llr"/>
                     <constraint firstAttribute="trailing" secondItem="9mT-3I-z04" secondAttribute="trailing" constant="10" id="r8W-vE-TfD"/>
                 </constraints>
             </tableViewCellContentView>

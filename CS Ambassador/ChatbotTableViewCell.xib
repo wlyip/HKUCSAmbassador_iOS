@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="message" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybt-SO-tpE">
-                        <rect key="frame" x="10" y="2" width="250" height="48"/>
+                        <rect key="frame" x="10" y="5" width="250" height="42"/>
                         <color key="backgroundColor" red="0.92871117346065557" green="0.92761791870377708" blue="0.89770210252277816" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="250" id="BTJ-AZ-EfD"/>
@@ -28,8 +28,8 @@
                     </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="ybt-SO-tpE" secondAttribute="bottom" constant="2" id="G3a-hq-156"/>
-                    <constraint firstItem="ybt-SO-tpE" firstAttribute="top" secondItem="3xK-QC-8Sl" secondAttribute="top" constant="2" id="RH3-7l-0Dp"/>
+                    <constraint firstAttribute="bottom" secondItem="ybt-SO-tpE" secondAttribute="bottom" constant="5" id="G3a-hq-156"/>
+                    <constraint firstItem="ybt-SO-tpE" firstAttribute="top" secondItem="3xK-QC-8Sl" secondAttribute="top" constant="5" id="RH3-7l-0Dp"/>
                     <constraint firstItem="ybt-SO-tpE" firstAttribute="leading" secondItem="3xK-QC-8Sl" secondAttribute="leading" constant="10" id="ftV-bH-2UH"/>
                 </constraints>
             </tableViewCellContentView>
