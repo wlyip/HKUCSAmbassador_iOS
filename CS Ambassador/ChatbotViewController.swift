@@ -14,9 +14,8 @@ struct Msg {
     var value: String
 }
 
-class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, UITableViewDelegate, UITableViewDataSource {
+class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, UITableViewDelegate, UITableViewDataSource, ButtonViewClick, CardButtonViewClick {
     
-    //private let messageID = "messageID"
     private var listOfMessages: [Msg] = []
     
     private lazy var chatInputAccessoryView: ChatInputAccessoryView = {
@@ -32,21 +31,26 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
         super.viewDidLoad()
         
         chatbotTableView.backgroundColor = .white
+        chatbotTableView.allowsSelection = true
+        chatbotTableView.isUserInteractionEnabled = true
         chatbotTableView.delegate = self
         chatbotTableView.dataSource = self
-        //chatbotTableView.register(UITableViewCell.self, forCellReuseIdentifier: messageID)
         chatbotTableView.register(UINib(nibName: "ChatbotTableViewCell", bundle: nil), forCellReuseIdentifier: ChatbotTableViewCell.identifier)
         chatbotTableView.register(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: UserCell.identifier)
         chatbotTableView.register(UINib(nibName: "ButtonCell", bundle: nil), forCellReuseIdentifier: ButtonCell.identifier)
-        //chatbotTableView.register(UINib(nibName: "CardCell", bundle: nil), forCellReuseIdentifier: CardCell.identifier)
         chatbotTableView.register(UINib(nibName: "CardInfoCell", bundle: nil), forCellReuseIdentifier: CardInfoCell.identifier)
         chatbotTableView.register(UINib(nibName: "CardButtonCell", bundle: nil), forCellReuseIdentifier: CardButtonCell.identifier)
+        
+        getApi(text: "init")
     }
     
     func clickOnSendButton(text: String) {
         listOfMessages.append(Msg(message: text, sender: "user", type: "", value: ""))
         chatbotTableView.reloadData()
-        
+        getApi(text: text)
+    }
+    
+    func getApi(text: String) {
         //api
         let json: [String: Any] = ["session_id": "tester", "text": text]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
@@ -126,24 +130,6 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
         }
         task.resume()
         
-
-        /*if text == "Hi" {
-            listOfMessages.append(Msg(message: "Hey", sender: "bot", type: "", value: ""))
-            chatbotTableView.reloadData()
-        }
-        else if text == "Hii"{
-            listOfMessages.append(Msg(message: "Heyy", sender: "button", type: "", value: ""))
-            chatbotTableView.reloadData()
-        }
-        else if text == "Hiii"{
-            listOfMessages.append(Msg(message: "Heyyy", sender: "card", type: "", value: ""))
-            listOfMessages.append(Msg(message: "Heyyyy", sender: "cardButton", type: "", value: ""))
-            chatbotTableView.reloadData()
-        }
-        
-        chatbotTableView.scrollToRow(at: IndexPath(row: listOfMessages.count-1, section: 0), at: .bottom, animated: true)
-        */
-        
         chatInputAccessoryView.inputBoxView.text = ""
     }
     
@@ -176,26 +162,13 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
         else if listOfMessages[indexPath.row].sender == "button" {
             let cell = chatbotTableView.dequeueReusableCell(withIdentifier: ButtonCell.identifier, for: indexPath) as! ButtonCell
             cell.buttonView.setTitle("  "+listOfMessages[indexPath.row].message+"  ", for: .normal)
+            cell.isUserInteractionEnabled = true
+            cell.cellDelegate = self
+            cell.index = indexPath
 
             return cell
         }
         else if listOfMessages[indexPath.row].sender == "cardInfo" {
-            /*let cell = chatbotTableView.dequeueReusableCell(withIdentifier: CardCell.identifier, for: indexPath) as! CardCell
-            
-            let url = URL(string: "https://coconuts.co/wp-content/uploads/2019/05/HKU-main-bldg-google-maps-960x540.jpg")
-            let data = try? Data(contentsOf: url!)
-            cell.imageView!.image = UIImage(data: data!)
-            
-            cell.cardTitleView.text = "title"
-            cell.cardSubView.text = "description"
-            cell.cardButtonView.setTitle("button", for: .normal)
-            let listOfButtons: [UIButton] = [cell.cardButtonView, cell.cardButtonView2]
-            listOfButtons[1].setTitle("button2", for: .normal)
-            listOfButtons[1].isHidden = false
-            cell.cardHeightConstraint.constant = 500
-            cell.layoutIfNeeded()
-
-            return cell*/
             let cell = chatbotTableView.dequeueReusableCell(withIdentifier: CardInfoCell.identifier, for: indexPath) as! CardInfoCell
             
             let url = URL(string:listOfMessages[indexPath.row].value)
@@ -211,6 +184,9 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
             let cell = chatbotTableView.dequeueReusableCell(withIdentifier: CardButtonCell.identifier, for: indexPath) as! CardButtonCell
             
             cell.cardButtonView.setTitle(listOfMessages[indexPath.row].message, for: .normal)
+            cell.isUserInteractionEnabled = true
+            cell.cellDelegate = self
+            cell.index = indexPath
 
             return cell
         }
@@ -222,6 +198,45 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
         
         return cell
     }
+
+    func onClickButton(index: Int) {
+        print("\(listOfMessages[index].message), \(listOfMessages[index].type), \(listOfMessages[index].value) click")
+        let text = listOfMessages[index].message
+        listOfMessages.append(Msg(message: text, sender: "user", type: "", value: ""))
+        chatbotTableView.reloadData()
+        
+        if listOfMessages[index].type == "payload" {
+            let value = listOfMessages[index].value
+            getApi(text: value)
+        }
+        else if listOfMessages[index].type == "web_url" {
+            let urlComponents = URLComponents (string: listOfMessages[index].value)!
+            UIApplication.shared.open (urlComponents.url!)
+        }
+        
+        chatbotTableView.reloadData()
+        chatbotTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-1, section: 0), at: .bottom, animated: true)
+    }
+    
+    func onClickCardButton(index: Int) {
+        print("\(listOfMessages[index].message), \(listOfMessages[index].type), \(listOfMessages[index].value) click")//
+        let text = listOfMessages[index].message
+        listOfMessages.append(Msg(message: text, sender: "user", type: "", value: ""))
+        chatbotTableView.reloadData()
+        
+        if listOfMessages[index].type == "payload" {
+            let value = listOfMessages[index].value
+            getApi(text: value)
+        }
+        else if listOfMessages[index].type == "web_url" {
+            let urlComponents = URLComponents (string: listOfMessages[index].value)!
+            UIApplication.shared.open (urlComponents.url!)
+        }
+        
+        chatbotTableView.reloadData()
+        chatbotTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-1, section: 0), at: .bottom, animated: true)
+    }
+    
 }
 
 

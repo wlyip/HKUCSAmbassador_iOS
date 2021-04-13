@@ -63,7 +63,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         else if (indexPath.item == 1) {
             let urlComponents = URLComponents (string: "https://www.cs.hku.hk/")!
-             UIApplication.shared.open (urlComponents.url!)
+            UIApplication.shared.open (urlComponents.url!)
         }
     }
     

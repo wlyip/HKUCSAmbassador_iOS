@@ -15,12 +15,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="52"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wa-1e-SbJ">
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3wa-1e-SbJ">
                         <rect key="frame" x="10" y="2" width="72" height="48"/>
                         <color key="backgroundColor" red="0.47797264150000002" green="0.5348988348" blue="0.62427575810000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="clickButton:" destination="tS9-Ev-eXk" eventType="touchUpInside" id="18b-SI-Dd2"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
