@@ -31,8 +31,6 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
         super.viewDidLoad()
         
         chatbotTableView.backgroundColor = .white
-        chatbotTableView.allowsSelection = true
-        chatbotTableView.isUserInteractionEnabled = true
         chatbotTableView.delegate = self
         chatbotTableView.dataSource = self
         chatbotTableView.register(UINib(nibName: "ChatbotTableViewCell", bundle: nil), forCellReuseIdentifier: ChatbotTableViewCell.identifier)
@@ -52,7 +50,9 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
     
     func getApi(text: String) {
         //api
-        let json: [String: Any] = ["session_id": "tester", "text": text]
+        let deviceID = UIDevice.current.identifierForVendor?.uuidString
+        print(deviceID ?? "tester")
+        let json: [String: Any] = ["session_id": deviceID ?? "tester", "text": text]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         
         let url = URL(string: "http://cs-chatbot.eastasia.cloudapp.azure.com:5001/webhook")!
@@ -238,5 +238,3 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
     }
     
 }
-
-
