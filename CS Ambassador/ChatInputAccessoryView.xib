@@ -31,22 +31,32 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F9q-tc-GQL">
-                    <rect key="frame" x="10" y="10" width="359" height="15"/>
+                    <rect key="frame" x="44" y="10" width="325" height="15"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <color key="textColor" systemColor="labelColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOb-di-q1q">
+                    <rect key="frame" x="0.0" y="-5" width="44" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="BqZ-i9-9DJ"/>
+                    </constraints>
+                    <state key="normal" title="Button2" image="audio_record_button"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="0.31372549019607843" green="0.39215686274509803" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="F9q-tc-GQL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="7Fa-c7-OtY"/>
+                <constraint firstItem="rOb-di-q1q" firstAttribute="bottom" secondItem="dag-Z6-Oo7" secondAttribute="bottom" constant="10" id="0wR-W6-gXM"/>
                 <constraint firstItem="F9q-tc-GQL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9tH-il-AIN"/>
+                <constraint firstItem="F9q-tc-GQL" firstAttribute="leading" secondItem="rOb-di-q1q" secondAttribute="trailing" id="AgI-O9-D6B"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dag-Z6-Oo7" secondAttribute="trailing" constant="10" id="FEs-TU-Lrb"/>
                 <constraint firstItem="dag-Z6-Oo7" firstAttribute="centerY" secondItem="F9q-tc-GQL" secondAttribute="centerY" id="KtC-qh-pue"/>
                 <constraint firstItem="F9q-tc-GQL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="OLY-c2-qvl"/>
                 <constraint firstItem="dag-Z6-Oo7" firstAttribute="leading" secondItem="F9q-tc-GQL" secondAttribute="trailing" constant="10" id="VV0-EB-FzH"/>
+                <constraint firstItem="rOb-di-q1q" firstAttribute="top" secondItem="dag-Z6-Oo7" secondAttribute="top" constant="-10" id="bpl-h6-X56"/>
+                <constraint firstItem="rOb-di-q1q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fBF-cV-w4Z"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="F9q-tc-GQL" secondAttribute="bottom" constant="10" id="u3L-e4-g4C"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -54,6 +64,7 @@
         </view>
     </objects>
     <resources>
+        <image name="audio_record_button" width="200" height="200"/>
         <image name="send_button" width="256" height="256"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
