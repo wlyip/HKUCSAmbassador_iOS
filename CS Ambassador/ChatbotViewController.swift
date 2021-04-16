@@ -80,7 +80,11 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
                         self.listOfMessages.append(Msg(message: mText.replacingOccurrences(of: "<br>", with: "\n"), sender: "bot", type: "", value: ""))
                         DispatchQueue.main.async {
                             self.chatbotTableView.reloadData()
-                            self.chatbotTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-1, section: 0), at: .bottom, animated: true)
+                            //self.chatbotTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-1, section: 0), at: .bottom, animated: true)
+                            let indexPath = IndexPath(row: self.listOfMessages.count-1, section: 0)
+                            if let _ = self.chatbotTableView.cellForRow(at: indexPath) {
+                                self.chatbotTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+                            }
                         }
                     }
                     else if mType == "quick_replies" {
@@ -98,7 +102,11 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
                         }
                         DispatchQueue.main.async {
                             self.chatbotTableView.reloadData()
-                            self.chatbotTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-1, section: 0), at: .bottom, animated: true)
+                            //self.chatbotTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-1, section: 0), at: .bottom, animated: true)
+                            let indexPath = IndexPath(row: self.listOfMessages.count-1, section: 0)
+                            if let _ = self.chatbotTableView.cellForRow(at: indexPath) {
+                                self.chatbotTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+                            }
                         }
                     }
                     else if mType == "cards" {
@@ -122,7 +130,11 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
                         }
                         DispatchQueue.main.async {
                             self.chatbotTableView.reloadData()
-                            self.chatbotTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-i-1, section: 0), at: .top, animated: true)
+                            //self.chatbotTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-i-1, section: 0), at: .top, animated: true)
+                            let indexPath = IndexPath(row: self.listOfMessages.count-i-1, section: 0)
+                            if let _ = self.chatbotTableView.cellForRow(at: indexPath) {
+                                self.chatbotTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                            }
                         }
                     }
                 }
