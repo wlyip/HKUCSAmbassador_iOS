@@ -35,17 +35,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             cell.contentView.addSubview(label)
         }
         else {
-            cell.backgroundColor = UIColor(hex: 0x6383A4)
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: cell.bounds.size.width, height: 125))
             label.textColor = UIColor.white
             label.textAlignment = .center
             label.font = label.font.withSize(20)
             if (indexPath.item == 1) {
-                label.text = "HKUCS HOMEPAGE"
+                cell.backgroundColor = UIColor(hex: 0x518C8C)
+                label.text = "ALTITUDE TEST"
                 cell.contentView.addSubview(label)
             }
             else if (indexPath.item == 2) {
-                label.text = "OTHERS"
+                cell.backgroundColor = UIColor(hex: 0x73899F)
+                label.text = "HKUCS HOMEPAGE"
                 cell.contentView.addSubview(label)
             }
         }
@@ -62,6 +63,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             navigationController?.pushViewController(chat, animated: true)
         }
         else if (indexPath.item == 1) {
+            let storyboard = UIStoryboard.init(name: "TestStoryboard", bundle: nil)
+            let chat = storyboard.instantiateViewController(withIdentifier: "TestViewController")
+            navigationController?.pushViewController(chat, animated: true)
+        }
+        else if (indexPath.item == 2) {
             let urlComponents = URLComponents (string: "https://www.cs.hku.hk/")!
             UIApplication.shared.open (urlComponents.url!)
         }

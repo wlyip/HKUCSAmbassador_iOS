@@ -1,20 +1,14 @@
 //
-//  ChatbotViewController.swift
+//  TestViewController.swift
 //  CS Ambassador
 //
-//  Created by Winnie Yip on 8/4/2021.
+//  Created by Winnie Yip on 18/4/2021.
 //
 
 import UIKit
 
-struct Msg {
-    var message: String
-    var sender: String
-    var type: String
-    var value: String
-}
 
-class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, UITableViewDelegate, UITableViewDataSource, ButtonViewClick, CardButtonViewClick {
+class TestViewController: UIViewController, ChatInputAccessoryViewDelegate, UITableViewDelegate, UITableViewDataSource, ButtonViewClick, CardButtonViewClick {
     
     private var listOfMessages: [Msg] = []
     
@@ -25,26 +19,26 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
         return view
     }()
     
-    @IBOutlet weak var chatbotTableView: UITableView!
+    @IBOutlet weak var testTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chatbotTableView.backgroundColor = .white
-        chatbotTableView.delegate = self
-        chatbotTableView.dataSource = self
-        chatbotTableView.register(UINib(nibName: "ChatbotTableViewCell", bundle: nil), forCellReuseIdentifier: ChatbotTableViewCell.identifier)
-        chatbotTableView.register(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: UserCell.identifier)
-        chatbotTableView.register(UINib(nibName: "ButtonCell", bundle: nil), forCellReuseIdentifier: ButtonCell.identifier)
-        chatbotTableView.register(UINib(nibName: "CardInfoCell", bundle: nil), forCellReuseIdentifier: CardInfoCell.identifier)
-        chatbotTableView.register(UINib(nibName: "CardButtonCell", bundle: nil), forCellReuseIdentifier: CardButtonCell.identifier)
+        testTableView.backgroundColor = .white
+        testTableView.delegate = self
+        testTableView.dataSource = self
+        testTableView.register(UINib(nibName: "ChatbotTableViewCell", bundle: nil), forCellReuseIdentifier: ChatbotTableViewCell.identifier)
+        testTableView.register(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: UserCell.identifier)
+        testTableView.register(UINib(nibName: "ButtonCell", bundle: nil), forCellReuseIdentifier: ButtonCell.identifier)
+        testTableView.register(UINib(nibName: "CardInfoCell", bundle: nil), forCellReuseIdentifier: CardInfoCell.identifier)
+        testTableView.register(UINib(nibName: "CardButtonCell", bundle: nil), forCellReuseIdentifier: CardButtonCell.identifier)
         
-        getApi(text: "init")
+        getApi(text: "altitude_test")
     }
     
     func clickOnSendButton(text: String) {
         listOfMessages.append(Msg(message: text, sender: "user", type: "", value: ""))
-        chatbotTableView.reloadData()
+        testTableView.reloadData()
         getApi(text: text)
     }
     
@@ -79,12 +73,12 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
                         print(mText.replacingOccurrences(of: "<br>", with: "\n"))
                         self.listOfMessages.append(Msg(message: mText.replacingOccurrences(of: "<br>", with: "\n"), sender: "bot", type: "", value: ""))
                         DispatchQueue.main.async {
-                            self.chatbotTableView.reloadData()
+                            self.testTableView.reloadData()
                             print("count: \(self.listOfMessages.count)")
                             //self.chatbotTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-1, section: 0), at: .bottom, animated: true)
                             let indexPath = IndexPath(row: self.listOfMessages.count-1, section: 0)
-                            if let _ = self.chatbotTableView.cellForRow(at: indexPath) {
-                                self.chatbotTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+                            if let _ = self.testTableView.cellForRow(at: indexPath) {
+                                self.testTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
                             }
                         }
                     }
@@ -102,12 +96,12 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
                             self.listOfMessages.append(Msg(message: bTitle, sender: "button", type: bType, value: bValue))
                         }
                         DispatchQueue.main.async {
-                            self.chatbotTableView.reloadData()
+                            self.testTableView.reloadData()
                             print("count2: \(self.listOfMessages.count)")
                             //self.chatbotTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-1, section: 0), at: .bottom, animated: true)
                             let indexPath = IndexPath(row: self.listOfMessages.count-1, section: 0)
-                            if let _ = self.chatbotTableView.cellForRow(at: indexPath) {
-                                self.chatbotTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+                            if let _ = self.testTableView.cellForRow(at: indexPath) {
+                                self.testTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
                             }
                         }
                     }
@@ -131,11 +125,11 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
                             }
                         }
                         DispatchQueue.main.async {
-                            self.chatbotTableView.reloadData()
+                            self.testTableView.reloadData()
                             //self.chatbotTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-i-1, section: 0), at: .top, animated: true)
                             let indexPath = IndexPath(row: self.listOfMessages.count-i-1, section: 0)
-                            if let _ = self.chatbotTableView.cellForRow(at: indexPath) {
-                                self.chatbotTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                            if let _ = self.testTableView.cellForRow(at: indexPath) {
+                                self.testTableView.scrollToRow(at: indexPath, at: .top, animated: true)
                             }
                         }
                     }
@@ -158,7 +152,7 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        chatbotTableView.estimatedRowHeight = 20
+        testTableView.estimatedRowHeight = 20
         return UITableView.automaticDimension
     }
     
@@ -168,13 +162,13 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if listOfMessages[indexPath.row].sender == "user" {
-            let cell = chatbotTableView.dequeueReusableCell(withIdentifier: UserCell.identifier, for: indexPath) as! UserCell
+            let cell = testTableView.dequeueReusableCell(withIdentifier: UserCell.identifier, for: indexPath) as! UserCell
             cell.messageText = " "+listOfMessages[indexPath.row].message
 
             return cell
         }
         else if listOfMessages[indexPath.row].sender == "button" {
-            let cell = chatbotTableView.dequeueReusableCell(withIdentifier: ButtonCell.identifier, for: indexPath) as! ButtonCell
+            let cell = testTableView.dequeueReusableCell(withIdentifier: ButtonCell.identifier, for: indexPath) as! ButtonCell
             cell.buttonView.setTitle("  "+listOfMessages[indexPath.row].message+"  ", for: .normal)
             cell.isUserInteractionEnabled = true
             cell.cellDelegate = self
@@ -183,7 +177,7 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
             return cell
         }
         else if listOfMessages[indexPath.row].sender == "cardInfo" {
-            let cell = chatbotTableView.dequeueReusableCell(withIdentifier: CardInfoCell.identifier, for: indexPath) as! CardInfoCell
+            let cell = testTableView.dequeueReusableCell(withIdentifier: CardInfoCell.identifier, for: indexPath) as! CardInfoCell
             
             if let url = URL(string:listOfMessages[indexPath.row].value){
                 let data = try? Data(contentsOf: url)
@@ -196,7 +190,7 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
             return cell
         }
         else if listOfMessages[indexPath.row].sender == "cardButton" {
-            let cell = chatbotTableView.dequeueReusableCell(withIdentifier: CardButtonCell.identifier, for: indexPath) as! CardButtonCell
+            let cell = testTableView.dequeueReusableCell(withIdentifier: CardButtonCell.identifier, for: indexPath) as! CardButtonCell
             
             cell.cardButtonView.setTitle(listOfMessages[indexPath.row].message, for: .normal)
             cell.isUserInteractionEnabled = true
@@ -206,7 +200,7 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
             return cell
         }
         
-        let cell = chatbotTableView.dequeueReusableCell(withIdentifier: ChatbotTableViewCell.identifier, for: indexPath) as! ChatbotTableViewCell
+        let cell = testTableView.dequeueReusableCell(withIdentifier: ChatbotTableViewCell.identifier, for: indexPath) as! ChatbotTableViewCell
         //cell.messageTextView.text = listOfMessages[indexPath.row].message
         cell.messageText = " "+listOfMessages[indexPath.row].message
         //cell.messageText?.message = listOfMessages[indexPath.row].message
@@ -218,7 +212,7 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
         print("\(listOfMessages[index].message), \(listOfMessages[index].type), \(listOfMessages[index].value) click")
         let text = listOfMessages[index].message
         listOfMessages.append(Msg(message: text, sender: "user", type: "", value: ""))
-        chatbotTableView.reloadData()
+        testTableView.reloadData()
         
         if listOfMessages[index].type == "payload" {
             let value = listOfMessages[index].value
@@ -229,15 +223,15 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
             UIApplication.shared.open (urlComponents.url!)
         }
         
-        chatbotTableView.reloadData()
-        chatbotTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-1, section: 0), at: .bottom, animated: true)
+        testTableView.reloadData()
+        testTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-1, section: 0), at: .bottom, animated: true)
     }
     
     func onClickCardButton(index: Int) {
         print("\(listOfMessages[index].message), \(listOfMessages[index].type), \(listOfMessages[index].value) click")//
         let text = listOfMessages[index].message
         listOfMessages.append(Msg(message: text, sender: "user", type: "", value: ""))
-        chatbotTableView.reloadData()
+        testTableView.reloadData()
         
         if listOfMessages[index].type == "payload" {
             let value = listOfMessages[index].value
@@ -248,8 +242,8 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
             UIApplication.shared.open (urlComponents.url!)
         }
         
-        chatbotTableView.reloadData()
-        chatbotTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-1, section: 0), at: .bottom, animated: true)
+        testTableView.reloadData()
+        testTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-1, section: 0), at: .bottom, animated: true)
     }
     
 }
