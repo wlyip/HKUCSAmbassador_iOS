@@ -88,7 +88,6 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
                         DispatchQueue.main.async {
                             self.chatbotTableView.reloadData()
                             print("count: \(self.listOfMessages.count)")
-                            //self.chatbotTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-1, section: 0), at: .bottom, animated: true)
                             let indexPath = IndexPath(row: self.listOfMessages.count-1, section: 0)
                             if let _ = self.chatbotTableView.cellForRow(at: indexPath) {
                                 self.chatbotTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
@@ -139,7 +138,6 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
                         }
                         DispatchQueue.main.async {
                             self.chatbotTableView.reloadData()
-                            //self.chatbotTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-i-1, section: 0), at: .top, animated: true)
                             let indexPath = IndexPath(row: self.listOfMessages.count-i-1, section: 0)
                             if let _ = self.chatbotTableView.cellForRow(at: indexPath) {
                                 self.chatbotTableView.scrollToRow(at: indexPath, at: .top, animated: true)
@@ -230,9 +228,7 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
         }
         
         let cell = chatbotTableView.dequeueReusableCell(withIdentifier: ChatbotTableViewCell.identifier, for: indexPath) as! ChatbotTableViewCell
-        //cell.messageTextView.text = listOfMessages[indexPath.row].message
         cell.messageText = " "+listOfMessages[indexPath.row].message
-        //cell.messageText?.message = listOfMessages[indexPath.row].message
         
         return cell
     }
