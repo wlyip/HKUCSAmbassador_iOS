@@ -192,11 +192,18 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
         else if listOfMessages[indexPath.row].sender == "cardInfo" {
             let cell = chatbotTableView.dequeueReusableCell(withIdentifier: CardInfoCell.identifier, for: indexPath) as! CardInfoCell
             
-            if let url = URL(string:listOfMessages[indexPath.row].value){
-                let data = try? Data(contentsOf: url)
-                cell.cardImageView.image = UIImage(data: data!)
+            let img = listOfMessages[indexPath.row].value
+            if img == ""{
+                print("empty")
+                //cell.cardImageView.frame.size.height = 1
+                cell.cardImageView.translatesAutoresizingMaskIntoConstraints = false
+                cell.cardImageView.heightAnchor.constraint(equalToConstant: 5).isActive = true
+            }else{
+                if let url = URL(string:img){
+                    let data = try? Data(contentsOf: url)
+                    cell.cardImageView.image = UIImage(data: data!)
+                }
             }
-            
             cell.cardTitleView.text = listOfMessages[indexPath.row].message
             cell.cardSubView.text = listOfMessages[indexPath.row].type
             
