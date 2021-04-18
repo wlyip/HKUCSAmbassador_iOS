@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 struct Msg {
     var message: String
@@ -14,7 +15,7 @@ struct Msg {
     var value: String
 }
 
-class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, UITableViewDelegate, UITableViewDataSource, ButtonViewClick, CardButtonViewClick {
+class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, UITableViewDelegate, UITableViewDataSource, ButtonViewClick, CardButtonViewClick, AudioClick {
     
     private var listOfMessages: [Msg] = []
     
@@ -38,6 +39,7 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
         chatbotTableView.register(UINib(nibName: "ButtonCell", bundle: nil), forCellReuseIdentifier: ButtonCell.identifier)
         chatbotTableView.register(UINib(nibName: "CardInfoCell", bundle: nil), forCellReuseIdentifier: CardInfoCell.identifier)
         chatbotTableView.register(UINib(nibName: "CardButtonCell", bundle: nil), forCellReuseIdentifier: CardButtonCell.identifier)
+        chatbotTableView.register(UINib(nibName: "AudioCell", bundle: nil), forCellReuseIdentifier: AudioCell.identifier)
         
         getApi(text: "init")
     }
@@ -55,7 +57,7 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
         let json: [String: Any] = ["session_id": deviceID ?? "tester", "text": text]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         
-        let url = URL(string: "http://cs-chatbot.eastasia.cloudapp.azure.com:5001/webhook")!
+        let url = URL(string: "https://cs-ambassador.herokuapp.com/webhook")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
@@ -70,6 +72,11 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
             if let responseJSON = responseJSON as? [String: Any],
                let messageArray = responseJSON["messages"] as? [[String: Any]]{
                 print(responseJSON)
+                let speech = responseJSON["Speech"] as! String
+                print(speech)
+                if (speech != ""){
+                    self.listOfMessages.append(Msg(message: "", sender: "audio", type: "", value: speech))
+                }
                 for m in messageArray{
                     let mType = m["type"] as! String
                     print(mType)
@@ -205,6 +212,15 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
 
             return cell
         }
+        else if listOfMessages[indexPath.row].sender == "audio" {
+            let cell = chatbotTableView.dequeueReusableCell(withIdentifier: AudioCell.identifier, for: indexPath) as! AudioCell
+            
+            cell.isUserInteractionEnabled = true
+            cell.cellDelegate = self
+            cell.index = indexPath
+
+            return cell
+        }
         
         let cell = chatbotTableView.dequeueReusableCell(withIdentifier: ChatbotTableViewCell.identifier, for: indexPath) as! ChatbotTableViewCell
         //cell.messageTextView.text = listOfMessages[indexPath.row].message
@@ -252,4 +268,39 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
         chatbotTableView.scrollToRow(at: IndexPath(row: self.listOfMessages.count-1, section: 0), at: .bottom, animated: true)
     }
     
+    func onClickAudio(index: Int) {
+        let audioText = listOfMessages[index].value
+        print(audioText)
+
+        let json: [String: Any] = ["text": audioText]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        let url = URL(string: "https://cs-ambassador.herokuapp.com/tts?access_token=cs-ambassador&format=mp3")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        request.httpBody = jsonData
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any]{
+                print(responseJSON)
+                let audioLink = responseJSON["data"] as! String
+                print(audioLink)
+                
+                let url  = URL.init(string: audioLink)
+
+                var player = AVPlayer()
+                let playerItem = AVPlayerItem(url: url!)
+                player = AVPlayer(playerItem: playerItem)
+                player.play()
+            }
+        }
+        task.resume()
+    }
+  
 }

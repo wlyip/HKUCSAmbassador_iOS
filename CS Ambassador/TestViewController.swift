@@ -33,7 +33,7 @@ class TestViewController: UIViewController, ChatInputAccessoryViewDelegate, UITa
         testTableView.register(UINib(nibName: "CardInfoCell", bundle: nil), forCellReuseIdentifier: CardInfoCell.identifier)
         testTableView.register(UINib(nibName: "CardButtonCell", bundle: nil), forCellReuseIdentifier: CardButtonCell.identifier)
         
-        getApi(text: "altitude_test")
+        getApi(text: "aptitude_test")
     }
     
     func clickOnSendButton(text: String) {
@@ -49,7 +49,7 @@ class TestViewController: UIViewController, ChatInputAccessoryViewDelegate, UITa
         let json: [String: Any] = ["session_id": deviceID ?? "tester", "text": text]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         
-        let url = URL(string: "http://cs-chatbot.eastasia.cloudapp.azure.com:5001/webhook")!
+        let url = URL(string: "https://cs-ambassador.herokuapp.com/webhook")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         

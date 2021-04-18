@@ -41,7 +41,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             label.font = label.font.withSize(20)
             if (indexPath.item == 1) {
                 cell.backgroundColor = UIColor(hex: 0x518C8C)
-                label.text = "ALTITUDE TEST"
+                label.text = "APTITUDE TEST"
                 cell.contentView.addSubview(label)
             }
             else if (indexPath.item == 2) {

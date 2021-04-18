@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		0FB7370680FF8B5C0AFE797E /* Pods_CS_Ambassador.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F8A4FBBD1B3BF3812D6B8E /* Pods_CS_Ambassador.framework */; };
 		352CFAE10DCA2E1A57B1901B /* Pods_CS_AmbassadorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1754B900CD6FCA708081BDBB /* Pods_CS_AmbassadorTests.framework */; };
+		B20C9CE1262BCA4600AB0336 /* AudioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B20C9CE0262BCA4600AB0336 /* AudioCell.xib */; };
+		B20C9CE6262BCAF900AB0336 /* AudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20C9CE5262BCAF900AB0336 /* AudioCell.swift */; };
+		B21E72232620DEB10057DAC6 /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21E72222620DEB10057DAC6 /* ButtonCell.xib */; };
+		B21E722B2620DF090057DAC6 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21E722A2620DF090057DAC6 /* ButtonCell.swift */; };
+		B2546795262B3DE200C86612 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2546794262B3DE200C86612 /* TestViewController.swift */; };
+		B254679A262B3E3400C86612 /* TestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2546799262B3E3400C86612 /* TestStoryboard.storyboard */; };
+		B2B084AE261F5DA200B2B307 /* ChatbotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B084AD261F5DA200B2B307 /* ChatbotViewController.swift */; };
+		B2B084B3261F5E0600B2B307 /* ChatbotStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B084B2261F5E0600B2B307 /* ChatbotStoryboard.storyboard */; };
+		B2B084B8261F635A00B2B307 /* ChatbotTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B084B7261F635A00B2B307 /* ChatbotTableViewCell.xib */; };
+		B2B084BD261F690400B2B307 /* ChatbotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B084BC261F690400B2B307 /* ChatbotTableViewCell.swift */; };
+		B2B084C52620A73500B2B307 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B084C42620A73500B2B307 /* UserCell.xib */; };
+		B2B084CA2620A94400B2B307 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B084C92620A94400B2B307 /* UserCell.swift */; };
 		B2B34FC125AA18990060F45C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B34FC025AA18990060F45C /* AppDelegate.swift */; };
 		B2B34FC325AA18990060F45C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B34FC225AA18990060F45C /* SceneDelegate.swift */; };
 		B2B34FC525AA18990060F45C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B34FC425AA18990060F45C /* ViewController.swift */; };
@@ -17,8 +29,10 @@
 		B2B34FCD25AA189C0060F45C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B34FCB25AA189C0060F45C /* LaunchScreen.storyboard */; };
 		B2B34FD825AA189D0060F45C /* CS_AmbassadorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B34FD725AA189D0060F45C /* CS_AmbassadorTests.swift */; };
 		B2B34FE325AA189D0060F45C /* CS_AmbassadorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B34FE225AA189D0060F45C /* CS_AmbassadorUITests.swift */; };
-		B2B34FFF25AA1A0F0060F45C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B34FFE25AA1A0F0060F45C /* ChatViewController.swift */; };
-		B2B3500425AAEA240060F45C /* ChatStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B3500325AAEA240060F45C /* ChatStoryboard.storyboard */; };
+		B2CDBC092621F88F005EA9D7 /* CardInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CDBC082621F88F005EA9D7 /* CardInfoCell.swift */; };
+		B2CDBC112621F9A5005EA9D7 /* CardButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2CDBC102621F9A5005EA9D7 /* CardButtonCell.xib */; };
+		B2CDBC192621FA14005EA9D7 /* CardButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CDBC182621FA14005EA9D7 /* CardButtonCell.swift */; };
+		B2CDBC3A2621FF85005EA9D7 /* CardInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2CDBC392621FF85005EA9D7 /* CardInfoCell.xib */; };
 		B2E2AE5725ADBE4600FD6A0B /* ChatInputAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E2AE5625ADBE4600FD6A0B /* ChatInputAccessoryView.xib */; };
 		B2E2AE5C25ADC0D700FD6A0B /* ChatInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E2AE5B25ADC0D700FD6A0B /* ChatInputAccessoryView.swift */; };
 		E5634224AEE6C2B0E3D1F452 /* Pods_CS_Ambassador_CS_AmbassadorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D60D0AF9F6CB0D7D7532A5 /* Pods_CS_Ambassador_CS_AmbassadorUITests.framework */; };
@@ -49,6 +63,18 @@
 		A4D60D0AF9F6CB0D7D7532A5 /* Pods_CS_Ambassador_CS_AmbassadorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CS_Ambassador_CS_AmbassadorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A944403BF055CD708AF1D539 /* Pods-CS Ambassador-CS AmbassadorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS Ambassador-CS AmbassadorUITests.release.xcconfig"; path = "Target Support Files/Pods-CS Ambassador-CS AmbassadorUITests/Pods-CS Ambassador-CS AmbassadorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A9F8A4FBBD1B3BF3812D6B8E /* Pods_CS_Ambassador.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CS_Ambassador.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B20C9CE0262BCA4600AB0336 /* AudioCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioCell.xib; sourceTree = "<group>"; };
+		B20C9CE5262BCAF900AB0336 /* AudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCell.swift; sourceTree = "<group>"; };
+		B21E72222620DEB10057DAC6 /* ButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
+		B21E722A2620DF090057DAC6 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		B2546794262B3DE200C86612 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		B2546799262B3E3400C86612 /* TestStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestStoryboard.storyboard; sourceTree = "<group>"; };
+		B2B084AD261F5DA200B2B307 /* ChatbotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotViewController.swift; sourceTree = "<group>"; };
+		B2B084B2261F5E0600B2B307 /* ChatbotStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatbotStoryboard.storyboard; sourceTree = "<group>"; };
+		B2B084B7261F635A00B2B307 /* ChatbotTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatbotTableViewCell.xib; sourceTree = "<group>"; };
+		B2B084BC261F690400B2B307 /* ChatbotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotTableViewCell.swift; sourceTree = "<group>"; };
+		B2B084C42620A73500B2B307 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		B2B084C92620A94400B2B307 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		B2B34FBD25AA18990060F45C /* CS Ambassador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS Ambassador.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B34FC025AA18990060F45C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2B34FC225AA18990060F45C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,8 +89,10 @@
 		B2B34FDE25AA189D0060F45C /* CS AmbassadorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CS AmbassadorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B34FE225AA189D0060F45C /* CS_AmbassadorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS_AmbassadorUITests.swift; sourceTree = "<group>"; };
 		B2B34FE425AA189D0060F45C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2B34FFE25AA1A0F0060F45C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		B2B3500325AAEA240060F45C /* ChatStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatStoryboard.storyboard; sourceTree = "<group>"; };
+		B2CDBC082621F88F005EA9D7 /* CardInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoCell.swift; sourceTree = "<group>"; };
+		B2CDBC102621F9A5005EA9D7 /* CardButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardButtonCell.xib; sourceTree = "<group>"; };
+		B2CDBC182621FA14005EA9D7 /* CardButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButtonCell.swift; sourceTree = "<group>"; };
+		B2CDBC392621FF85005EA9D7 /* CardInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardInfoCell.xib; sourceTree = "<group>"; };
 		B2E2AE5625ADBE4600FD6A0B /* ChatInputAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatInputAccessoryView.xib; sourceTree = "<group>"; };
 		B2E2AE5B25ADC0D700FD6A0B /* ChatInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputAccessoryView.swift; sourceTree = "<group>"; };
 		D369661DBAEACE367F4D0BFB /* Pods-CS Ambassador.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS Ambassador.debug.xcconfig"; path = "Target Support Files/Pods-CS Ambassador/Pods-CS Ambassador.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,17 +175,31 @@
 		B2B34FBF25AA18990060F45C /* CS Ambassador */ = {
 			isa = PBXGroup;
 			children = (
-				B2B34FC025AA18990060F45C /* AppDelegate.swift */,
-				B2B34FC225AA18990060F45C /* SceneDelegate.swift */,
 				B2B34FC425AA18990060F45C /* ViewController.swift */,
 				B2B34FC625AA18990060F45C /* Main.storyboard */,
+				B2B084AD261F5DA200B2B307 /* ChatbotViewController.swift */,
+				B2B084B2261F5E0600B2B307 /* ChatbotStoryboard.storyboard */,
+				B2E2AE5B25ADC0D700FD6A0B /* ChatInputAccessoryView.swift */,
+				B2E2AE5625ADBE4600FD6A0B /* ChatInputAccessoryView.xib */,
+				B2B084BC261F690400B2B307 /* ChatbotTableViewCell.swift */,
+				B2B084B7261F635A00B2B307 /* ChatbotTableViewCell.xib */,
+				B2B084C92620A94400B2B307 /* UserCell.swift */,
+				B2B084C42620A73500B2B307 /* UserCell.xib */,
+				B21E722A2620DF090057DAC6 /* ButtonCell.swift */,
+				B21E72222620DEB10057DAC6 /* ButtonCell.xib */,
+				B2CDBC082621F88F005EA9D7 /* CardInfoCell.swift */,
+				B2CDBC392621FF85005EA9D7 /* CardInfoCell.xib */,
+				B2CDBC182621FA14005EA9D7 /* CardButtonCell.swift */,
+				B2CDBC102621F9A5005EA9D7 /* CardButtonCell.xib */,
+				B2546794262B3DE200C86612 /* TestViewController.swift */,
+				B2546799262B3E3400C86612 /* TestStoryboard.storyboard */,
+				B20C9CE5262BCAF900AB0336 /* AudioCell.swift */,
+				B20C9CE0262BCA4600AB0336 /* AudioCell.xib */,
 				B2B34FC925AA189C0060F45C /* Assets.xcassets */,
+				B2B34FC025AA18990060F45C /* AppDelegate.swift */,
+				B2B34FC225AA18990060F45C /* SceneDelegate.swift */,
 				B2B34FCB25AA189C0060F45C /* LaunchScreen.storyboard */,
 				B2B34FCE25AA189C0060F45C /* Info.plist */,
-				B2B34FFE25AA1A0F0060F45C /* ChatViewController.swift */,
-				B2B3500325AAEA240060F45C /* ChatStoryboard.storyboard */,
-				B2E2AE5625ADBE4600FD6A0B /* ChatInputAccessoryView.xib */,
-				B2E2AE5B25ADC0D700FD6A0B /* ChatInputAccessoryView.swift */,
 			);
 			path = "CS Ambassador";
 			sourceTree = "<group>";
@@ -289,10 +331,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2B34FCD25AA189C0060F45C /* LaunchScreen.storyboard in Resources */,
-				B2B3500425AAEA240060F45C /* ChatStoryboard.storyboard in Resources */,
+				B2B084B3261F5E0600B2B307 /* ChatbotStoryboard.storyboard in Resources */,
+				B2B084B8261F635A00B2B307 /* ChatbotTableViewCell.xib in Resources */,
+				B2CDBC3A2621FF85005EA9D7 /* CardInfoCell.xib in Resources */,
+				B20C9CE1262BCA4600AB0336 /* AudioCell.xib in Resources */,
+				B2B084C52620A73500B2B307 /* UserCell.xib in Resources */,
 				B2B34FCA25AA189C0060F45C /* Assets.xcassets in Resources */,
+				B21E72232620DEB10057DAC6 /* ButtonCell.xib in Resources */,
 				B2E2AE5725ADBE4600FD6A0B /* ChatInputAccessoryView.xib in Resources */,
+				B2CDBC112621F9A5005EA9D7 /* CardButtonCell.xib in Resources */,
 				B2B34FC825AA18990060F45C /* Main.storyboard in Resources */,
+				B254679A262B3E3400C86612 /* TestStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,9 +469,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2B084CA2620A94400B2B307 /* UserCell.swift in Sources */,
+				B2B084AE261F5DA200B2B307 /* ChatbotViewController.swift in Sources */,
+				B2546795262B3DE200C86612 /* TestViewController.swift in Sources */,
+				B21E722B2620DF090057DAC6 /* ButtonCell.swift in Sources */,
 				B2B34FC525AA18990060F45C /* ViewController.swift in Sources */,
 				B2B34FC125AA18990060F45C /* AppDelegate.swift in Sources */,
-				B2B34FFF25AA1A0F0060F45C /* ChatViewController.swift in Sources */,
+				B2CDBC192621FA14005EA9D7 /* CardButtonCell.swift in Sources */,
+				B2B084BD261F690400B2B307 /* ChatbotTableViewCell.swift in Sources */,
+				B20C9CE6262BCAF900AB0336 /* AudioCell.swift in Sources */,
+				B2CDBC092621F88F005EA9D7 /* CardInfoCell.swift in Sources */,
 				B2E2AE5C25ADC0D700FD6A0B /* ChatInputAccessoryView.swift in Sources */,
 				B2B34FC325AA18990060F45C /* SceneDelegate.swift in Sources */,
 			);
@@ -602,12 +658,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UFDGWV2CVQ;
 				INFOPLIST_FILE = "CS Ambassador/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cs.CS-Ambassador";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cs.CS-Ambassador3547328";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -621,12 +678,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UFDGWV2CVQ;
 				INFOPLIST_FILE = "CS Ambassador/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cs.CS-Ambassador";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cs.CS-Ambassador3547328";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
