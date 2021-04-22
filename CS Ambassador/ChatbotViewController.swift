@@ -6,7 +6,10 @@
 //
 
 import UIKit
+import AVKit
 import AVFoundation
+
+var player = AVPlayer()
 
 struct Msg {
     var message: String
@@ -275,10 +278,10 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
         let audioText = listOfMessages[index].value
         print(audioText)
 
-        let json: [String: Any] = ["text": audioText]
+        let json: [String: Any] = ["text": audioText, "format": "mp3"]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         
-        let url = URL(string: "https://cs-ambassador.herokuapp.com/tts?access_token=cs-ambassador&format=mp3")!
+        let url = URL(string: "https://cs-ambassador.herokuapp.com/tts?access_token=cs-ambassador")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
@@ -295,12 +298,11 @@ class ChatbotViewController: UIViewController, ChatInputAccessoryViewDelegate, U
                 let audioLink = responseJSON["data"] as! String
                 print(audioLink)
                 
-                let url  = URL.init(string: audioLink)
-
-                var player = AVPlayer()
+                let url = URL(string: audioLink)
                 let playerItem = AVPlayerItem(url: url!)
                 player = AVPlayer(playerItem: playerItem)
                 player.play()
+                
             }
         }
         task.resume()
